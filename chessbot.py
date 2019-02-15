@@ -141,3 +141,5 @@ def main():
             print(f'Computer move:{move} with score of {score}')
         print(board)
         print('\n')
+        
+main()
