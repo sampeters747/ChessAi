@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
+#include "types.h"
 
-using Bitboard = uint64_t;
 
 namespace Bitboards {
     void init();
@@ -37,18 +37,6 @@ constexpr Bitboard FILES[8] = {A_FILE, B_FILE, C_FILE, D_FILE, E_FILE, F_FILE, G
 constexpr Bitboard EDGE_BB = A_FILE | H_FILE | RANK_1 | RANK_8;
 constexpr Bitboard NOT_EDGE_BB = ~EDGE_BB;
 
-// Declaring Directions
-enum Direction : int {
-    NORTH = 8,
-    SOUTH = -8,
-    EAST = 1,
-    WEST = -1,
-    SOUTH_EAST = -7,
-    SOUTH_WEST = -9,
-    NORTH_WEST = 7,
-    NORTH_EAST = 9,
-};
-
 // Declaring arrays of bitboards that we'll initilize later
 extern Bitboard SQUARE_BB[64];
 extern Bitboard FORWARD_DIAG_BB[15];
@@ -67,3 +55,10 @@ Bitboard moveOne(Bitboard bb);
 
 void prettyPrintBB(Bitboard bb);
 
+inline Bitboard getFile(Square sq) {
+    return FILES[sq%8];
+}
+
+inline Bitboard getRank(Square sq) {
+    return FILES[sq/8];
+}

@@ -1,5 +1,14 @@
 #include "bitboard.h"
-#include "squares.h"
+#include "types.h"
+
+Color& operator++(Color& c, int) {
+    if (c == WHITE) {
+        c = BLACK;
+    } else {
+        c = WHITE;
+    } 
+    return c;
+}
 
 Square& operator++(Square& s, int) {
     if (s == SQ_OVERFLOW) {
@@ -10,9 +19,3 @@ Square& operator++(Square& s, int) {
     return s;
 }
 
-Bitboard getFile(Square sq) {
-    return FILES[sq%8];
-}
-Bitboard getRank(Square sq) {
-    return FILES[sq/8];
-}

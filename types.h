@@ -1,5 +1,7 @@
 #pragma once
-#include "bitboard.h"
+
+// Bitboard alias
+using Bitboard = uint64_t;
 
 // Declaring Squares
 enum Square : int {
@@ -14,6 +16,23 @@ enum Square : int {
     SQ_OVERFLOW,
 };
 
+// Declaring Directions
+enum Direction : int {
+    NORTH = 8,
+    SOUTH = -8,
+    EAST = 1,
+    WEST = -1,
+    SOUTH_EAST = -7,
+    SOUTH_WEST = -9,
+    NORTH_WEST = 7,
+    NORTH_EAST = 9,
+};
+
 Square& operator++(Square&, int);
-Bitboard getFile(Square sq);
-Bitboard getRank(Square sq);
+
+// Declaring Colors
+enum Color : int {
+    WHITE, BLACK
+};
+
+Color& operator++(Color&, int);

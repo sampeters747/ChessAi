@@ -4,6 +4,7 @@ Used at startup to create lookup tables used during engine search.
 */
 
 #include "bitboard.h"
+#include "types.h"
 
 template<Direction d>
 Bitboard dumbFill(Bitboard p, Bitboard unoccupied) {

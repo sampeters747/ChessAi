@@ -1,8 +1,6 @@
 #include <iostream>
 #include "bitboard.h"
-#include "squares.h"
-#include "colors.h"
-#include "magicmoves.h"
+#include "types.h"
 #include "floodfill.h"
 
 constexpr Bitboard r_magics[64]=
@@ -47,4 +45,6 @@ int main() {
         std::cout << sq << std::endl;
         carry_rippler_test(ROOK_ATTACKS[sq], sq);
     }
+
+    Bitboard t= SQUARE_BB[A1];
 }
