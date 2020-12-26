@@ -1,3 +1,4 @@
+#include "bitboard.h"
 #include "squares.h"
 
 Square& operator++(Square& s, int) {
@@ -7,4 +8,11 @@ Square& operator++(Square& s, int) {
         s = Square(s+1);
     } 
     return s;
+}
+
+Bitboard getFile(Square sq) {
+    return FILES[sq%8];
+}
+Bitboard getRank(Square sq) {
+    return FILES[sq/8];
 }

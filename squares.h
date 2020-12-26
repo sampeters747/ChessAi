@@ -1,4 +1,5 @@
 #pragma once
+#include "bitboard.h"
 
 // Declaring Squares
 enum Square : int {
@@ -14,3 +15,5 @@ enum Square : int {
 };
 
 Square& operator++(Square&, int);
+Bitboard getFile(Square sq);
+Bitboard getRank(Square sq);

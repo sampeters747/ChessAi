@@ -2,7 +2,7 @@
 #include "squares.h"
 #include "colors.h"
 
-using namespace std;
+
 
 Bitboard SQUARE_BB[64];
 Bitboard FORWARD_DIAG_BB[15];

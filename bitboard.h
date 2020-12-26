@@ -33,6 +33,10 @@ constexpr Bitboard G_FILE = 0x4040404040404040;
 constexpr Bitboard H_FILE = 0x8080808080808080;
 constexpr Bitboard FILES[8] = {A_FILE, B_FILE, C_FILE, D_FILE, E_FILE, F_FILE, G_FILE, H_FILE};
 
+// Other Bitboards
+constexpr Bitboard EDGE_BB = A_FILE | H_FILE | RANK_1 | RANK_8;
+constexpr Bitboard NOT_EDGE_BB = ~EDGE_BB;
+
 // Declaring Directions
 enum Direction : int {
     NORTH = 8,
@@ -60,7 +64,6 @@ extern Bitboard KNIGHT_ATTACKS[64];
 // Shifts all the bits in a bitboard over one space in any direction
 template<Direction D>
 Bitboard moveOne(Bitboard bb);
-
 
 void prettyPrintBB(Bitboard bb);
 
