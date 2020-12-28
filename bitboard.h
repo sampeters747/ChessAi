@@ -2,8 +2,8 @@
 #include <iostream>
 #include "types.h"
 
-
-namespace Bitboards {
+namespace Bitboards
+{
     void init();
 }
 
@@ -50,15 +50,17 @@ extern Bitboard QUEEN_ATTACKS[64];
 extern Bitboard KNIGHT_ATTACKS[64];
 
 // Shifts all the bits in a bitboard over one space in any direction
-template<Direction D>
+template <Direction D>
 Bitboard moveOne(Bitboard bb);
 
 void prettyPrintBB(Bitboard bb);
 
-inline Bitboard getFile(Square sq) {
-    return FILES[sq%8];
-}
+inline Bitboard getFile(Square sq)
+{
+    return FILES[sq % 8];
+};
 
-inline Bitboard getRank(Square sq) {
-    return FILES[sq/8];
-}
+inline Bitboard getRank(Square sq)
+{
+    return FILES[sq / 8];
+};

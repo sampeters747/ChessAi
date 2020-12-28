@@ -28,6 +28,16 @@ enum Direction : int {
     NORTH_EAST = 9,
 };
 
+// Declaring Pieces
+enum Piece : int {
+    Pawn,
+    Bishop,
+    Knight,
+    Rook,
+    Queen,
+    King
+};
+
 Square& operator++(Square&, int);
 
 // Declaring Colors

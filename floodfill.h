@@ -4,4 +4,4 @@
 template<Direction d>
 Bitboard dumbFill(Bitboard p, Bitboard unoccupied);
 
-Bitboard test(Bitboard position, Bitboard occupied);
+Bitboard d7Attacks(Bitboard position, Bitboard unoccupied);

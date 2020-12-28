@@ -19,10 +19,10 @@ Bitboard dumbFill(Bitboard p, Bitboard unoccupied) {
     return moveOne<d>(attacked);
 }
 
-Bitboard test(Bitboard position, Bitboard occupied) {
-    Bitboard attacks = dumbFill<NORTH>(position, occupied);
-    attacks |= dumbFill<EAST>(position, occupied);
-    attacks |= dumbFill<SOUTH>(position, occupied);
-    attacks |= dumbFill<WEST>(position, occupied);
+Bitboard d7Attacks(Bitboard position, Bitboard unoccupied) {
+    Bitboard attacks = dumbFill<NORTH>(position, unoccupied);
+    attacks |= dumbFill<EAST>(position, unoccupied);
+    attacks |= dumbFill<SOUTH>(position, unoccupied);
+    attacks |= dumbFill<WEST>(position, unoccupied);
     return attacks;
 }

@@ -202,3 +202,4 @@ void prettyPrintBB(Bitboard bb)
         }
     }
 }
+
