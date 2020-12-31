@@ -5,9 +5,9 @@ target = chess
 
 
 $(target) : $(objects)
-	g++ -fopenmp -o $(target) $(objects)
+	g++ -g $(flags) -o $(target) $(objects)
 
 %.o : %.cc
-	g++ -c $(flags) $< -o $@
+	g++ -c -g $(flags) $< -o $@
 clean :
 	rm $(target) $(objects)

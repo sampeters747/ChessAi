@@ -56,4 +56,10 @@ private:
 public:
     MagicTable(Piece pieceType, Bitboard emptyAttacks[64]);
     ~MagicTable();
+    Bitboard getAttacks(Square sq, Bitboard occupied);
 };
+
+ulong random_uint64();
+
+
+ulong random_uint64_fewbits();

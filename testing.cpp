@@ -2,7 +2,9 @@
 #include "bitboard.h"
 #include "types.h"
 #include "floodfill.h"
+#include "magic.h"
 
+/*
 constexpr Bitboard r_magics[64]=
 {
     0x0080001020400080, 0x0040001000200040, 0x0080081000200080, 0x0080040800100080,
@@ -22,15 +24,13 @@ constexpr Bitboard r_magics[64]=
 	0x00FFFCDDFCED714A, 0x007FFCDDFCED714A, 0x003FFFCDFFD88096, 0x0000040810002101,
 	0x0001000204080011, 0x0001000204000801, 0x0001000082000401, 0x0001FFFAABFAD1A2
 };
-
-void carry_rippler_test(Bitboard d, Square sq){
+*/
+void carry_rippler_test(Bitboard d){
     // n will change to include every possible subset
     Bitboard n = EMPTY_BB;
     int c = 0;
-    int b;
     do {
         c++;
-        test(SQUARE_BB[sq], n);
         n = (n-d)&d;
     } while (n);
 }
@@ -41,10 +41,11 @@ int main() {
 
     Bitboard n = ~EMPTY_BB^SQUARE_BB[D6];
 
-    for (Square sq = A1; sq <= H8; sq++) {
-        std::cout << sq << std::endl;
-        carry_rippler_test(ROOK_ATTACKS[sq], sq);
-    }
-
-    Bitboard t= SQUARE_BB[A1];
+    //for (Square sq = A1; sq <= H8; sq++) {
+    //std::cout << sq << std::endl;
+    //    carry_rippler_test(ROOK_ATTACKS[sq]);
+    //}
+    
+    MagicTable MagicRookTable(Rook, ROOK_ATTACKS);
+    prettyPrintBB(MagicRookTable.getAttacks(D4, C_FILE | F_FILE | RANK_6));
 }

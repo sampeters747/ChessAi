@@ -201,5 +201,6 @@ void prettyPrintBB(Bitboard bb)
             std::cout << ' ';
         }
     }
+    std::cout << std::endl;
 }
 

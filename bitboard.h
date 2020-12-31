@@ -62,5 +62,5 @@ inline Bitboard getFile(Square sq)
 
 inline Bitboard getRank(Square sq)
 {
-    return FILES[sq / 8];
+    return RANKS[sq / 9];
 };
